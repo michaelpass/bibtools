@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if a reference is provided
+if [ -z "$1" ]; then
+  echo "Usage: bibleverse BOOK.CHAPTER.VERSE (e.g., John.3.16 or John.3)"
+  exit 1
+fi
+
+# Assign the argument to a variable
+REFERENCE="$1"
+
+# Run diatheke with the reference and clean the output
+diatheke -b KJV -k "$REFERENCE" | \
+sed 's/<[^>]*>//g' | \
+sed 's/\s*lemma\.[^ ]*//g' | \
+tr -s ' '
+

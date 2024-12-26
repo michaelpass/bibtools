@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{lettrine}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage{fontspec}
+
+\geometry{a4paper, margin=1in}
+\setmainfont{EB Garamond}
+
+\tcbset{
+  bibleversebox/.style={
+    sharp corners,
+    colback=white,
+    colframe=black,
+    fonttitle=\bfseries\scshape,
+    fontupper=\itshape,
+    arc=4mm,
+    boxrule=0.5mm,
+    coltitle=black,
+    title={\large Verse of the Week},
+    frame hidden=false,
+    colframe=black!50,
+    boxsep=5mm,
+  }
+}
+
+\tcbuselibrary{skins,breakable,raster}
+
+\begin{document}
+\begin{center}
+{\Huge \textsc{The Bible Verse of the Week}}
+\end{center}
+
+\vspace{1cm}
+
+\begin{tcolorbox}[bibleversebox]
+\lettrine[lines=3, loversize=0.3]{<<TITLE:0>>}{<<TITLE>>}
+
+<<TEXT>>
+\end{tcolorbox}
+
+\vspace{1cm}
+
+\begin{center}
+{\large Reflect on this verse throughout your week!}
+\end{center}
+
+\end{document}
+
